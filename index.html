@@ -22,15 +22,18 @@
   </head>
   <body>
     <div class="container">
-      <header class="text-light p-2">
+      <!-- <header class="text-dark bg-light p-2">
         <h1>Espetinho do Galo</h1>
         <p>Aqui tem o melhor espetinho da cidade!</p>
-      </header>
+      </header> -->
 
       <section id="menu">
         <!-- Adicione aqui a lista de espetinhos com preços -->
         <div class="cartoes">
-          <h2 class="text-danger bg-dark">Cardápio</h2>
+          <div class="logo">
+            <img src="IMAGES/logo.png" alt="logo espetinho do galo">
+          </div>
+          <h2 class="text-light bg-dark mt-3 mb-3">Cardápio</h2>
           <!-- ------------------------CARD 1------------------------- -->
           <div
             class="card text-white bg-primary mb-3 espetinho-card"
@@ -85,20 +88,20 @@
             <div class="card-footer bg-danger">
               <button
                 class="btn btn-outline-dark"
-                onclick="diminuirQuantidade('card1')"
+                onclick="diminuirQuantidade('card2')"
               >
                 -
               </button>
-              <span class="quantidade" data-card="card1">0</span>
+              <span class="quantidade" data-card="card2">0</span>
               <button
                 class="btn btn-outline-dark"
-                onclick="aumentarQuantidade('card1')"
+                onclick="aumentarQuantidade('card2')"
               >
                 +
               </button>
               <button
                 class="btn btn-outline-dark"
-                onclick="adicionarAoPedido('card1')"
+                onclick="adicionarAoPedido('card2')"
               >
                 Pedir
               </button>
@@ -120,20 +123,20 @@
             <div class="card-footer bg-danger">
               <button
                 class="btn btn-outline-dark"
-                onclick="diminuirQuantidade('card1')"
+                onclick="diminuirQuantidade('card3')"
               >
                 -
               </button>
-              <span class="quantidade" data-card="card1">0</span>
+              <span class="quantidade" data-card="card3">0</span>
               <button
                 class="btn btn-outline-dark"
-                onclick="aumentarQuantidade('card1')"
+                onclick="aumentarQuantidade('card3')"
               >
                 +
               </button>
               <button
                 class="btn btn-outline-dark"
-                onclick="adicionarAoPedido('card1')"
+                onclick="adicionarAoPedido('card3')"
               >
                 Pedir
               </button>
