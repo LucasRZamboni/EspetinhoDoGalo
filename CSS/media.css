@@ -1,0 +1,56 @@
+@media only screen and (min-width: 300px) {
+    .cartoes{
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+    }
+    
+    .cartoes .card{
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 577px) {
+    .cartoes{ 
+        align-items: center;
+        justify-content: center;
+        gap: 2%;
+    }
+    
+    .cartoes .card{
+        max-width: 48%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .cartoes{ 
+        align-items: center;
+        justify-content: space-around;
+        gap: 2%;
+    }
+    
+    .cartoes .card{
+        max-width: 32%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .cartoes{ 
+        align-items: center;
+        justify-content: space-around;
+        gap: 5%;
+    }
+    
+    .cartoes .card{
+        max-width: 30%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .cartoes{ 
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+    }
+    
+    .cartoes .card{
+        max-width: 25%;
+    }
+}
