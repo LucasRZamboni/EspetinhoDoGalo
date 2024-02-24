@@ -25,11 +25,12 @@ body{
     width: 100%;
     height: fit-content;
     box-shadow: 0 0 5px rgb(43, 43, 43);
-    border-radius: 8px;
+    border-radius: 10px;
 }
 .logo img{
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
+    max-width: 400px;
 }
 .cartoes{
     display: flex;
@@ -46,13 +47,27 @@ body{
     text-align: center;
     padding: 10px;
     box-shadow: 0 0 5px black;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.cartoes .card{
+    border-radius: 10px !important;
 }
 .quant{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 5%;
+    justify-content: center;
+    gap: 2%;
+    width: 50%;
+}
+.quantidade{
+    padding: 5px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .quant button{
     font-size: 20px;
@@ -60,8 +75,47 @@ body{
     align-items: center;
     justify-content: center;
 }
+.pedir{
+    padding: 10px 0;
+    width: 35%;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 0 0 16px;
+}
+.card-header .card-title,
+.card-header .preco{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+.card-header .preco{
+    width: 40%;
+    justify-content: center;
+    height: 100%;
+    border-top-right-radius: 8px;
+    color: red !important;
+    font-size: 23px;
+}
+.card-body img{
+    border-radius: 10px;
+    box-shadow: 0 0 4px black;
+}
 .card-footer{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 15px 10px;
 }
