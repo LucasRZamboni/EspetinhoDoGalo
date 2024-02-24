@@ -24,125 +24,160 @@ const precos = {
   agua: 3.0,
 };
 
-const quantidades = {};
+function diminuirQuantidade(item) {
+  const quantidadeElement = document.querySelector(`[data-card="${item}"]`);
+  let quantidade = parseInt(quantidadeElement.textContent, 10);
 
-function atualizarPrecoTotal(cardId) {
-  const quantidade = quantidades[cardId];
-  const precoUnitario = precos[cardId];
-  const precoTotal = quantidade * precoUnitario;
-  return isNaN(precoTotal) ? "0.00" : precoTotal.toFixed(2);
-}
-
-function aumentarQuantidade(cardId) {
-    const itemId = cardId;
-    if (!quantidades[itemId]) {
-        quantidades[itemId] = 0;
-    }
-    quantidades[itemId]++;
-    console.log(`Adicionar 1 ao pedido do ${itemId}`);
-    console.log(`Quantidade atualizada para ${quantidades[itemId]}`);
-    atualizarQuantidade(itemId);
-}
-
-function diminuirQuantidade(cardId) {
-    const itemId = cardId;
-    if (quantidades[itemId] > 0) {
-        quantidades[itemId]--;
-        atualizarQuantidade(itemId);
-    }
-}
-
-function removerDoPedido(cardId) {
-    console.log(`Remover do pedido, cardId: ${cardId}`);
-    const itemId = cardId;
-    const listaPedido = document.getElementById('lista-pedido');
-    const itemExistente = listaPedido.querySelector(`[data-card="${itemId}"]`);
-
-    if (itemExistente) {
-        const quantidadeExistenteElement = itemExistente.querySelector('.quantidade-item');
-        const precoTotalElement = itemExistente.querySelector('.preco-total');
-
-        if (quantidadeExistenteElement && precoTotalElement) {
-            const quantidadeExistente = parseInt(quantidadeExistenteElement.textContent);
-
-            console.log(`Remover 1 do pedido do ${itemId}, quantidadeExistente: ${quantidadeExistente}`);
-
-            if (quantidadeExistente > 1) {
-                quantidadeExistenteElement.textContent = quantidadeExistente - 1;
-                precoTotalElement.textContent = `R$ ${(quantidadeExistente - 1) * precos[itemId].toFixed(2)}`;
-            } else {
-                listaPedido.removeChild(itemExistente);
-            }
-
-            quantidades[itemId]--;  // Atualizar a quantidade no objeto quantidades
-            console.log(`Chamando a função atualizarQuantidade para ${itemId}`);
-            atualizarQuantidade(itemId);
-        } else {
-            console.error(`Elementos não encontrados para o itemId: ${itemId}`);
-        }
-    } else {
-        console.error(`Elemento não encontrado para o itemId: ${itemId}`);
-    }
-}
-
-
-function adicionarTodosAoPedido() {
-    for (const cardId in quantidades) {
-        const itemId = cardId;
-      const quantidade = quantidades[itemId];
-  
-      if (quantidade > 0) {
-        console.log(`Adicionar ${quantidade} ao pedido do ${itemId}`);
-  
-        const listaPedido = document.getElementById("lista-pedido");
-        const itemExistente = listaPedido.querySelector(
-          `[data-card="${itemId}"]`
-        );
-  
-        if (itemExistente) {
-          const quantidadeExistente = parseInt(
-            itemExistente.querySelector(".quantidade-item").textContent
-          );
-          itemExistente.querySelector(".quantidade-item").textContent =
-            quantidadeExistente + quantidade;
-          const precoTotal = (quantidadeExistente + quantidade) * precos[itemId];
-          itemExistente.querySelector(
-            ".preco-total"
-          ).innerText = `R$ ${precoTotal.toFixed(2)}`;
-        } else {
-          const novoItemPedido = document.createElement("li");
-          novoItemPedido.innerHTML = `
-                      ${quantidade}x ${itemId} - R$ ${atualizarPrecoTotal(itemId)}
-                      <button class="btn btn-danger btn-sm" onclick="removerDoPedido('${itemId}')">Excluir</button>
-                  `;
-          novoItemPedido.setAttribute("data-card", itemId);
-          listaPedido.appendChild(novoItemPedido);
-        }
-  
-        quantidades[itemId] = 0;
-        atualizarQuantidade(itemId);
-      }
-    }
+  // Verificar se a quantidade é maior que zero antes de diminuir
+  if (quantidade > 0) {
+    quantidade--;
+    quantidadeElement.textContent = quantidade;
   }
+}
+
+function aumentarQuantidade(item) {
+  const quantidadeElement = document.querySelector(`[data-card="${item}"]`);
+  let quantidade = parseInt(quantidadeElement.textContent, 10);
+
+  // Você pode adicionar lógica adicional aqui, se necessário
+
+  quantidade++;
+  quantidadeElement.textContent = quantidade;
+}
+
+function atualizarPreco(cardElement, item) {
+  const precoElement = cardElement.querySelector(".preco");
+
+  if (precos.hasOwnProperty(item)) {
+    precoElement.textContent = `R$ ${precos[item].toFixed(2)}`;
+  } else {
+    console.error(`Item "${item}" não encontrado nos preços.`);
+  }
+}
+
+function adicionarAoPedido() {
+  const cards = document.querySelectorAll('.espetinho-card');
+  const listaPedido = document.getElementById('lista-pedido');
+  const totalPedidoElement = document.getElementById('valor-total');
+
+  let totalPedido = 0;
+
+  // Mapear os itens existentes na lista de pedidos para evitar duplicatas
+  const itensExistentes = new Map();
+
+  Array.from(listaPedido.children).forEach(item => {
+    const partes = item.textContent.split('-');
   
-
-function fecharPedido() {
-  console.log("Pedido fechado!");
-  // Adicione aqui a lógica para finalizar o pedido, se necessário
-}
-
-function atualizarQuantidade(itemId) {
-    const elementoQuantidade = document.querySelector(`#${itemId} .quantidade`);
-    if (elementoQuantidade) {
-        elementoQuantidade.textContent = quantidades[itemId].toString();
+    if (partes.length === 2) {
+      const quantidadeExistente = parseInt(partes[0].trim().split('x')[0]) || 0; // Obter apenas a quantidade numérica
+      const itemId = partes[1].trim().split('x')[1]?.trim() || ''; // Obter apenas o ID do item
+  
+      const valorTotal = parseFloat(partes[1].trim().replace('Total: R$', '').replace(',', '.')) || 0;
+  
+      // Verificar se o itemId é válido antes de atualizar o mapa de itens existentes
+      if (itemId) {
+        // Atualizar o mapa de itens existentes
+        itensExistentes.set(itemId, quantidadeExistente);
+      }
+  
+      totalPedido += valorTotal;
     }
+  });
+  
+  cards.forEach(function (card) {
+    const itemId = card.id;
+    const quantidadeElement = card.querySelector(`[data-card="${itemId}"]`);
+    const quantidade = parseInt(quantidadeElement.textContent, 10);
+  
+    if (quantidade > 0) {
+      const precoElement = card.querySelector('.preco');
+      const precoUnitario = parseFloat(precoElement.textContent.replace('R$ ', ''));
+  
+      // Verificar se o item já existe na lista de pedidos
+      if (itensExistentes.has(itemId)) {
+        // Se o item já existe, somar a quantidade
+        const quantidadeExistente = itensExistentes.get(itemId);
+        const novaQuantidade = quantidadeExistente + quantidade;
+  
+        const novoTotal = novaQuantidade * precoUnitario;
+  
+        // Atualizar o item existente na lista de pedidos
+        const itemExistente = Array.from(listaPedido.children).find(item => item.textContent.includes(itemId));
+        itemExistente.innerHTML = `${novaQuantidade}x ${itemId} - Total: R$ ${novoTotal.toFixed(2)} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+      } else {
+        // Se o item não existe na lista, adicionar normalmente
+        const novoItem = document.createElement('li');
+        const valorTotal = quantidade * precoUnitario;
+        novoItem.innerHTML = `${quantidade}x ${itemId} - Total: R$ ${valorTotal.toFixed(2)} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+        listaPedido.appendChild(novoItem);
+  
+        // Atualizar o mapa de itens existentes
+        itensExistentes.set(itemId, quantidade);
+      }
+  
+      // Zerar a quantidade no card após adicionar ao pedido
+      quantidadeElement.textContent = '0';
+    }
+  });
+  
+  // Atualize o valor total na interface
+  totalPedidoElement.textContent = `R$ ${totalPedido.toFixed(2)}`;
+  
 }
 
 
+
+function removerDoPedido(itemId) {
+  const listaPedido = document.getElementById('lista-pedido');
+
+  const itemRemover = Array.from(listaPedido.children).find(item => item.textContent.includes(itemId));
+
+  if (itemRemover) {
+    const partes = itemRemover.textContent.split('-');
+    const quantidadeExistente = parseInt(partes[0].trim().split('x')[0]);
+
+    if (quantidadeExistente > 1) {
+      // Reduzir a quantidade do item em 1
+      const novaQuantidade = quantidadeExistente - 1;
+      const precoUnitario = parseFloat(partes[1].trim().replace('Total: R$', '').replace(',', '.')) / quantidadeExistente;
+      const novoTotal = novaQuantidade * precoUnitario;
+
+      itemRemover.innerHTML = `${novaQuantidade}x ${itemId} - Total: R$ ${novoTotal.toFixed(2)} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+    } else {
+      // Se a nova quantidade for igual a 1, remover completamente o item
+      listaPedido.removeChild(itemRemover);
+    }
+    // Atualize o valor total na interface após remover o item
+    atualizarValorTotalPedido();
+  } else {
+    console.log('Item não encontrado.');
+  }
+}
+
+function atualizarValorTotalPedido() {
+  const listaPedido = document.getElementById('lista-pedido');
+  const totalPedidoElement = document.getElementById('valor-total');
+
+  let totalPedido = 0;
+
+  Array.from(listaPedido.children).forEach(item => {
+    const partes = item.textContent.split('-');
+    const valorItem = parseFloat(partes[1].trim().replace('Total: R$', '').replace(',', '.'));
+    totalPedido += valorItem;
+  });
+
+  totalPedidoElement.textContent = `R$ ${totalPedido.toFixed(2)}`;
+}
+
+// Restante do seu código permanece o mesmo...
+
+
+
+// Exemplo de uso para atualizar o preço de todos os cards
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".espetinho-card");
-  cards.forEach((card) => {
-    const cardId = card.id;
-    quantidades[cardId] = 0;
+  cards.forEach(function (card) {
+    const itemId = card.id;
+    atualizarPreco(card, itemId);
   });
 });

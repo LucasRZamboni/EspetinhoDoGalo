@@ -40,8 +40,8 @@
             id="carne"
           >
             <div class="card-header bg-dark">
-              <div class="card-title">Carne</div>
-              <div class="preco text-danger">R$ 8,00</div>
+              <div class="card-title" id="item">Carne</div>
+              <div class="preco text-danger" id="preco">R$ 8,00</div>
             </div>
             <div class="card-body">
               <img
@@ -76,11 +76,11 @@
           <!-- ------------------------CARD 2------------------------- -->
           <div
             class="card text-white bg-primary mb-3 espetinho-card"
-            id="card2"
+            id="coracao"
           >
             <div class="card-header bg-dark">
-              <div class="card-title">Coração</div>
-              <div class="preco text-danger">R$ 8,00</div>
+              <div class="card-title" id="item">Coração</div>
+              <div class="preco text-danger" id="preco">R$ 8,00</div>
             </div>
             <div class="card-body">
               <img
@@ -93,18 +93,18 @@
               <div class="quant">
                 <button
                   class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('card2')"
+                  onclick="diminuirQuantidade('coracao')"
                 >
                   <ion-icon name="remove-circle-outline"></ion-icon>
                 </button>
                 <span
                   class="quantidade btn btn-light disabled"
-                  data-card="card2"
+                  data-card="coracao"
                   >0</span
                 >
                 <button
                   class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('card2')"
+                  onclick="aumentarQuantidade('coracao')"
                 >
                   <ion-icon name="add-circle-outline"></ion-icon>
                 </button>
@@ -114,7 +114,7 @@
         </div>
         <button
           class="pedir btn btn-success"
-          onclick="adicionarTodosAoPedido()"
+          onclick="adicionarAoPedido()"
         >
           ADD <ion-icon name="cart-outline"></ion-icon>
         </button>
@@ -134,6 +134,12 @@
       <section id="itens-pedido">
         <h2>Itens do Pedido</h2>
         <ul id="lista-pedido"></ul>
+
+        <div id="total-pedido">
+          <strong>Total do Pedido:</strong> R$ <span id="valor-total">0.00</span>
+        </div>
+
+        
         <button class="btn btn-outline-danger" onclick="fecharPedido()">
           Fechar Pedido
         </button>
