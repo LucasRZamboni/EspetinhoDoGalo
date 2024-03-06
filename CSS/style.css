@@ -8,6 +8,12 @@ body{
     width: 100%;
     background: linear-gradient(to top,  rgb(247, 232, 26), rgba(209, 9, 9, 0.863));
 }
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .container{
     position: relative;
     width: 100%;
@@ -83,6 +89,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 10px;
+    align-self: center;
 }
 .card-header{
     display: flex;
@@ -122,4 +129,75 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 15px 10px;
+}
+#pedidos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin: 10px 0;
+}
+#itens-pedido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 10px; */
+    border: 1px solid black;
+
+    border-radius: 10px;
+    position: relative;
+}
+#itens-pedido .card-title{
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#itens-pedido .card-footer{
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#itens-pedido .card-footer button{
+    /* height: 50px; */
+    /* width: fit-content; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#lista-pedido{
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px;
+
+}
+#lista-pedido li{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    margin: 3px 0;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+#lista-pedido li .btn{
+    height: 30px;
+    padding: 5px;
+    margin: 0;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }

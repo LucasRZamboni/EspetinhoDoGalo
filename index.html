@@ -29,6 +29,8 @@
 
       <section id="menu">
         <!-- Adicione aqui a lista de espetinhos com preços -->
+
+                 
         <div class="cartoes">
           <div class="logo">
             <img src="IMAGES/logo.png" alt="logo espetinho do galo" />
@@ -395,6 +397,9 @@
             </div>
           </div>
         </div>
+
+
+
         <button class="pedir btn btn-success" onclick="adicionarAoPedido()">
           ADD <ion-icon name="cart-outline"></ion-icon>
         </button>
@@ -411,18 +416,26 @@
       </section>
 
       <!-- Nova seção para revisar os itens do pedido -->
-      <section id="itens-pedido">
-        <h2>Itens do Pedido</h2>
-        <ul id="lista-pedido"></ul>
+      <section id="itens-pedido" class="bg-primary">
+        <div class="card-title bg-dark">
+          <h2>Itens do Pedido</h2>
+        </div>
+        
+        <ul id="lista-pedido">
+        </ul>
 
         <div id="total-pedido">
           <strong>Total do Pedido:</strong> R$
           <span id="valor-total">0.00</span>
         </div>
 
-        <button class="btn btn-outline-danger" onclick="fecharPedido()">
-          Fechar Pedido
-        </button>
+
+        <div class="card-footer bg-dark">
+          <button class="btn btn-outline-danger" onclick="fecharPedido()">
+            Fechar Pedido
+          </button>
+        </div>
+        
       </section>
 
       <footer>

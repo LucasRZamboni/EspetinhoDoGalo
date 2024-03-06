@@ -117,14 +117,14 @@ function adicionarAoPedido() {
         );
         itemExistente.innerHTML = `${novaQuantidade}x ${itemId} - Total: R$ ${novoTotal.toFixed(
           2
-        )} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+        )} <button class="btn btn-danger" onclick="removerDoPedido('${itemId}')">Remover</button>`;
       } else {
         // Se o item não existe na lista, adicionar normalmente
         const novoItem = document.createElement("li");
         const valorTotal = quantidade * precoUnitario;
         novoItem.innerHTML = `${quantidade}x ${itemId} - Total: R$ ${valorTotal.toFixed(
           2
-        )} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+        )} <button class="btn btn-danger" onclick="removerDoPedido('${itemId}')">Remover</button>`;
         listaPedido.appendChild(novoItem);
 
         // Atualizar o mapa de itens existentes
