@@ -162,7 +162,7 @@ function removerDoPedido(itemId) {
 
       itemRemover.innerHTML = `${novaQuantidade}x ${itemId} - Total: R$ ${novoTotal.toFixed(
         2
-      )} <button onclick="removerDoPedido('${itemId}')">Remover</button>`;
+      )} <button class="btn btn-danger" onclick="removerDoPedido('${itemId}')">Remover</button>`;
     } else {
       // Se a nova quantidade for igual a 1, remover completamente o item
       listaPedido.removeChild(itemRemover);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Espetinhos do Seu Amigo</title>
+    <title>Espetinho Do Galo</title>
 
     <link
       rel="stylesheet"
@@ -400,23 +400,13 @@
 
 
 
-        <button class="pedir btn btn-success" onclick="adicionarAoPedido()">
+        <button class="pedir btn btn-warning" onclick="adicionarAoPedido()">
           ADD <ion-icon name="cart-outline"></ion-icon>
         </button>
       </section>
 
-      <section id="pedidos">
-        <h2>Faça seu Pedido</h2>
-        <button
-          class="btn btn-outline-light"
-          onclick="redirecionarParaWhatsApp()"
-        >
-          Fazer Pedido no WhatsApp
-        </button>
-      </section>
-
-      <!-- Nova seção para revisar os itens do pedido -->
-      <section id="itens-pedido" class="bg-primary">
+       <!-- Nova seção para revisar os itens do pedido -->
+       <section id="itens-pedido" class="bg-primary mt-4">
         <div class="card-title bg-dark">
           <h2>Itens do Pedido</h2>
         </div>
@@ -431,14 +421,25 @@
 
 
         <div class="card-footer bg-dark">
-          <button class="btn btn-outline-danger" onclick="fecharPedido()">
-            Fechar Pedido
+          <button class="pedir f btn btn-success" onclick="adicionarAoPedido()">
+            Fechar pedido
           </button>
         </div>
         
       </section>
 
-      <footer>
+      <section id="pedidos" class="mt-4">
+        <button
+          class="btn btn-danger whats"
+          onclick="redirecionarParaWhatsApp()"
+        >
+          Enviar por <ion-icon name="logo-whatsapp" class="text-success"></ion-icon>
+        </button>
+      </section>
+
+     
+
+      <footer class="bg-dark">
         <p>&copy; 2024 Espetinho do Galo</p>
       </footer>
     </div>
