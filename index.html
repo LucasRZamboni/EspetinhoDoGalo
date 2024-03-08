@@ -30,402 +30,490 @@
       <section id="menu">
         <!-- Adicione aqui a lista de espetinhos com preços -->
 
-                 
         <div class="cartoes">
           <div class="logo">
             <img src="IMAGES/logo.png" alt="logo espetinho do galo" />
           </div>
           <h2 class="text-light bg-dark mt-3 mb-3">Espetinhos</h2>
 
-          <!-- ------------------------CARD 1------------------------- -->
+          <div class="accordion" id="accordionExample">
+            <!-- --------------------espetinhos-------------------------- -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button bg-dark"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                <h2 class="text-light bg-dark mt-3 mb-3">Espetinhos</h2>
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <!-- ------------------------CARD 1------------------------- -->
 
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="carne"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Carne</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/carne.PNG"
-                alt="imagem espetinho de carne"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('carne')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="carne"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('carne')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="carne"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Carne</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/carne.PNG"
+                        alt="imagem espetinho de carne"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('carne')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="carne"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('carne')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 2------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="coracao"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Coração</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/coracao.png"
+                        alt="imagem espetinho de coração"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('coracao')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="coracao"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('coracao')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 3------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="carne_misto"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Carne Mista</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/carnemista.jpg"
+                        alt="imagem espetinho de carne mista"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('carne_misto')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="carne_misto"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('carne_misto')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 4------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="medalhao"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Medalhão</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/espetinhmedalhao.png"
+                        alt="imagem espetinho de medalhão"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('medalhao')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="medalhao"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('medalhao')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 5------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="almondega"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Almondega</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/espetinhoalmondegas.jpg"
+                        alt="imagem espetinho de almondega"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('almondega')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="almondega"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('almondega')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 6------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="queijo"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Queijo</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/espetinhoqueijo.jpg"
+                        alt="imagem espetinho de queijo"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('queijo')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="queijo"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('queijo')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 7------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="panceta"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Panceta</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/espetinhopanceta.jpeg"
+                        alt="imagem espetinho de panceta"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('panceta')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="panceta"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('panceta')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 8------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="linguiça"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Linguiça</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/espetinholinguica.jpg"
+                        alt="imagem espetinho de linguiça"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('linguiça')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="linguiça"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('linguiça')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ------------------------CARD 9------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="pao_de_alho"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Pão de Alho</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/paodealho.jpg"
+                        alt="imagem espetinho de pão de alho"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('pao_de_alho')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="pao_de_alho"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('pao_de_alho')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ------------------------CARD 2------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="coracao"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Coração</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/coracao.png"
-                alt="imagem espetinho de coração"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
+            <!-- --------------------cervejas-------------------------- -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
                 <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('coracao')"
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
                 >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
+                  Accordion Item #2
                 </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="coracao"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('coracao')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <strong>This is the second item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- ------------------------CARD 3------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="carne_misto"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Carne Mista</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/carnemista.jpg"
-                alt="imagem espetinho de carne mista"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
+            <!-- --------------------refrigerantes/agua-------------------------- -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
                 <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('carne_misto')"
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
                 >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
+                  Accordion Item #3
                 </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="carne_misto"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('carne_misto')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 4------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="medalhao"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Medalhão</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/espetinhmedalhao.png"
-                alt="imagem espetinho de medalhão"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('medalhao')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="medalhao"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('medalhao')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 5------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="almondega"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Almondega</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/espetinhoalmondegas.jpg"
-                alt="imagem espetinho de almondega"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('almondega')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="almondega"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('almondega')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 6------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="queijo"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Queijo</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/espetinhoqueijo.jpg"
-                alt="imagem espetinho de queijo"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('queijo')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="queijo"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('queijo')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 7------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="panceta"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Panceta</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/espetinhopanceta.jpeg"
-                alt="imagem espetinho de panceta"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('panceta')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="panceta"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('panceta')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 8------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="linguiça"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Linguiça</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/espetinholinguica.jpg"
-                alt="imagem espetinho de linguiça"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('linguiça')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="linguiça"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('linguiça')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- ------------------------CARD 9------------------------- -->
-
-          <div
-            class="card text-white bg-primary mb-3 espetinho-card"
-            id="pao_de_alho"
-          >
-            <div class="card-header bg-dark">
-              <div class="card-title" id="item">Pão de Alho</div>
-              <div class="preco text-danger" id="preco">R$ 8,00</div>
-            </div>
-            <div class="card-body">
-              <img
-                src="IMAGES/paodealho.jpg"
-                alt="imagem espetinho de pão de alho"
-                style="width: 100%"
-              />
-            </div>
-            <div class="card-footer bg-dark">
-              <div class="quant">
-                <button
-                  class="btn btn-outline-danger"
-                  onclick="diminuirQuantidade('pao_de_alho')"
-                >
-                  <ion-icon name="remove-circle-outline"></ion-icon>
-                </button>
-                <span
-                  class="quantidade btn btn-light disabled"
-                  data-card="pao_de_alho"
-                  >0</span
-                >
-                <button
-                  class="btn btn-outline-success"
-                  onclick="aumentarQuantidade('pao_de_alho')"
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <strong>This is the third item's accordion body.</strong> It
+                  is hidden by default, until the collapse plugin adds the
+                  appropriate classes that we use to style each element. These
+                  classes control the overall appearance, as well as the showing
+                  and hiding via CSS transitions. You can modify any of this
+                  with custom CSS or overriding our default variables. It's also
+                  worth noting that just about any HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit
+                  overflow.
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
 
         <button class="pedir btn btn-warning" onclick="adicionarAoPedido()">
           ADD <ion-icon name="cart-outline"></ion-icon>
         </button>
       </section>
 
-       <!-- Nova seção para revisar os itens do pedido -->
-       <section id="itens-pedido" class="bg-primary mt-4">
+      <!-- Nova seção para revisar os itens do pedido -->
+      <section id="itens-pedido" class="bg-primary mt-4">
         <div class="card-title bg-dark">
           <h2>Itens do Pedido</h2>
         </div>
-        
-        <ul id="lista-pedido">
-        </ul>
+
+        <ul id="lista-pedido"></ul>
 
         <div id="total-pedido">
           <strong>Total do Pedido:</strong> R$
           <span id="valor-total">0.00</span>
         </div>
 
-
         <div class="card-footer bg-dark">
           <button class="pedir f btn btn-success" onclick="adicionarAoPedido()">
             Fechar pedido
           </button>
         </div>
-        
       </section>
 
       <section id="pedidos" class="mt-4">
@@ -433,11 +521,10 @@
           class="btn btn-danger whats"
           onclick="redirecionarParaWhatsApp()"
         >
-          Enviar por <ion-icon name="logo-whatsapp" class="text-success"></ion-icon>
+          Enviar por
+          <ion-icon name="logo-whatsapp" class="text-success"></ion-icon>
         </button>
       </section>
-
-     
 
       <footer class="bg-dark">
         <p>&copy; 2024 Espetinho do Galo</p>

@@ -38,6 +38,17 @@ body{
     width: 100%;
     border-radius: 10px;
 }
+.accordion{
+    width: 100%;
+}
+.accordion-header{
+    width: 100%;
+}
+.accordion-button{
+    padding: 10px;
+    width: 100%;
+    gap: 30px;
+}
 .cartoes{
     display: flex;
     align-items: center;
@@ -51,7 +62,7 @@ body{
 .cartoes h2{
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0 0 5px black;
     border-radius: 10px;
     font-size: 2rem;
