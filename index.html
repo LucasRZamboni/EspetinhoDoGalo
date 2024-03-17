@@ -508,15 +508,46 @@
                 data-bs-parent="#accordionExample"
               >
                 <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <!-- ------------------------CARD 1------------------------- -->
+
+                  <div
+                    class="card text-white bg-primary mb-3 espetinho-card"
+                    id="refri_lata"
+                  >
+                    <div class="card-header bg-dark">
+                      <div class="card-title" id="item">Coca-cola Lata</div>
+                      <div class="preco text-danger" id="preco">R$ 8,00</div>
+                    </div>
+                    <div class="card-body">
+                      <img
+                        src="IMAGES/latinhacoca.png"
+                        alt="imagem lata de coca-cola"
+                        style="width: 100%"
+                      />
+                    </div>
+                    <div class="card-footer bg-dark">
+                      <div class="quant">
+                        <button
+                          class="btn btn-outline-danger"
+                          onclick="diminuirQuantidade('refri_lata')"
+                        >
+                          <ion-icon name="remove-circle-outline"></ion-icon>
+                        </button>
+                        <span
+                          class="quantidade btn btn-light disabled"
+                          data-card="refri_lata"
+                          >0</span
+                        >
+                        <button
+                          class="btn btn-outline-success"
+                          onclick="aumentarQuantidade('refri_lata')"
+                        >
+                          <ion-icon name="add-circle-outline"></ion-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
