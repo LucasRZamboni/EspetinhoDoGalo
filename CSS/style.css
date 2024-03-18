@@ -31,24 +31,18 @@ body{
 .logo{
     width: 100%;
     height: fit-content;
-    box-shadow: 0 0 5px rgb(43, 43, 43);
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 .logo img{
     width: 100%;
     border-radius: 10px;
+    box-shadow: 0 0 5px rgb(43, 43, 43);
+    max-width: 400px;
 }
-.accordion{
-    width: 100%;
-}
-.accordion-header{
-    width: 100%;
-}
-.accordion-button{
-    padding: 10px;
-    width: 100%;
-    gap: 30px;
-}
+
 .cartoes{
     display: flex;
     align-items: center;
@@ -95,7 +89,7 @@ body{
 .pedir,
 .pedir.f{
     padding: 10px 0;
-    width: 35%;
+    width: 50%;
     text-transform: uppercase;
     font-weight: 600;
     display: flex;
@@ -103,9 +97,7 @@ body{
     justify-content: center;
     gap: 10px;
     align-self: center;
-}
-.pedir.f{
-    width: 50%;
+    max-width: 200px;
 }
 .card-header{
     display: flex;
@@ -215,13 +207,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 .whats{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 50%;
+    max-width: 200px;
 }
 .whats ion-icon{
     font-size: 20px;
@@ -237,6 +230,8 @@ footer{
     margin: 0;
     bottom: 0;
     left: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 footer p{
     height: 100%;
