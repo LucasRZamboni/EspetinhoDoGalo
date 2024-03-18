@@ -28,6 +28,31 @@ const precos = {
   // ------------------------------------
   agua: 3.0,
 };
+const nomesVariaveis = {
+  carne: "Carne",
+  coracao: "Coração",
+  carne_misto: "Carne Mista",
+  medalhao: "Medalhão",
+  almondega: "Almondega",
+  queijo: "Queijo",
+  panceta: "Panceta",
+  linguiça: "Linguiça",
+  pao_de_alho: "Pão De Alho",
+  garrafa_skol: "Garrafa Skol",
+  garrafa_brahma: "Garrafa Brahma",
+  garrafa_antartica: "Garrafa Antártica",
+  garrafinha_original: "Garrafinha Original",
+  garrafinha_budweiser: "Garrafinha Budweiser",
+  long_heineken: "Longneck Heineken",
+  lata_heineken: "Lata Heineken",
+  lata_amstel: "Lata Amstel",
+  lata_antartica: "Lata Antartica",
+  lata_brahma: "Lata Brahma",
+  lata_skol: "Lata Skol",
+  refri_lata: "Refri Lata",
+  refri_garrafinha: "Refri Garrafinha",
+  agua: "Água",
+};
 
 function diminuirQuantidade(item) {
   const quantidadeElement = document.querySelector(`[data-card="${item}"]`);
@@ -54,6 +79,7 @@ function atualizarPreco(cardElement, item) {
   const precoElement = cardElement.querySelector(".preco");
 
   if (precos.hasOwnProperty(item)) {
+    const nomeVariavel = nomesVariaveis[item];
     precoElement.textContent = `R$ ${precos[item].toFixed(2)}`;
   } else {
     console.error(`Item "${item}" não encontrado nos preços.`);
